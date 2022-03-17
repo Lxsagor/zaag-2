@@ -25,7 +25,6 @@ const useStyles = makeStyles(() => ({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        zIndex: 99999,
     },
 }));
 const Welcome = () => {
@@ -33,9 +32,7 @@ const Welcome = () => {
     const [formData, setFormData] = useState({
         country: "",
     });
-    const [errors, setErrors] = useState({
-        country: { text: "", show: false },
-    });
+
     const [info, setInfo] = useState([]);
     const classes = useStyles();
     const fieldChangeHandler = (field, value) => {
@@ -86,7 +83,7 @@ const Welcome = () => {
                         onChange={(e) =>
                             fieldChangeHandler("country", e.target.value)
                         }
-                    ></TextField>
+                    />
                     <Button
                         variant="contained"
                         size="large"
